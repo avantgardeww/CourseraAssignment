@@ -69,13 +69,7 @@ void print_array(uint8_t* arr, uint8_t arrLen){
 
 uint8_t find_median(uint8_t* arr, uint8_t arrLen){
     if (arrLen%2 == 0){
-        uint8_t medianIsAnInt = ((arr[arrLen/2]+arr[arrLen/2-1])%2 == 0) ? TRUE : FALSE;
-        if (medianIsAnInt){
-            return ((arr[arrLen/2]+arr[arrLen/2-1])/2);
-        }
-        else{
-            return ((arr[arrLen/2]+arr[arrLen/2-1])/2+1);
-        }
+        return ((arr[arrLen/2]+arr[arrLen/2-1])/2);
     }
     else{
         return (arr[arrLen/2+1]);
@@ -84,18 +78,11 @@ uint8_t find_median(uint8_t* arr, uint8_t arrLen){
 
 uint8_t find_mean(uint8_t* arr, uint8_t arrLen){
     int total = 0;
-    uint8_t mean = 0;
     for (int i = 0; i < arrLen; i++)
     {
         total += arr[i];
     }
-    mean = total/arrLen;
-    if (total%arrLen >= arrLen/2){
-        return (total/arrLen+1);
-    }
-    else{
-        return (total/arrLen);
-    }
+    return (total/arrLen);
 }
 
 uint8_t find_maximum(uint8_t* arr, uint8_t arrLen){
